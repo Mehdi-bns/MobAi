@@ -1,0 +1,29 @@
+
+    Decision Flow Diagram:
+    
+    [Historical Data] 
+           |
+           v
+    [Preprocessing] --> (Feature Engineering: Lags, Temporal, Entropy)
+           |
+           v
+    [XGBoost Forecast Model] --> (Predict Future Demand)
+           |
+           v
+    [Optimization Engine]
+           |
+           |--> (Input: Forecast, Product Weight, Warehouse Status)
+           |
+           |--> [Strategy Selection]
+           |       |--> Complexity < 500? -> Canadian (Hungarian) Algorithm
+           |       |--> Complexity > 500? -> Greedy Heuristic
+           |
+           v
+    [Pathfinding]
+           |--> (Method: A* / CuOpt)
+           |--> [Routing Logic] -> (Avoid Congestion, Minimize Distance)
+           |
+           v
+    [Execution Output]
+           |--> Operational Instructions (Receipt -> Storage -> Picking -> Delivery)
+    
